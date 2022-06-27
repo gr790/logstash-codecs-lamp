@@ -38,8 +38,7 @@ class LogStash::Codecs::Lamp < LogStash::Codecs::Base
   # def register
   def register
 
-    validate_queue_size_threshold_setting!
-    @lamp = create_lamp()
+      @lamp = create_lamp()
 
   end
 
@@ -50,7 +49,7 @@ class LogStash::Codecs::Lamp < LogStash::Codecs::Base
       event = LogStash::Event.new(MESSAGE => data)
 
       begin
-          # Create Lamp Object with Off
+          # Create Lamp Object with state set to Off
           toggle()
           event.set('lamp', state())
       rescue => e

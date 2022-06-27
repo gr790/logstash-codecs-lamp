@@ -19,15 +19,14 @@ describe LogStash::Codecs::Lamp do
     subject.off
   end
 
-  shared_examples :codec do
 
+  context "#on" do
+    it "lamp state should be true" do
       subject { LogStash::Codecs::Lamp.new }
-      context "#on" do
-        it "lamp state should be true" do
-          subject.on()
-          expect(event.get("lamp")).to eq("true")
-        end
-      end
+      subject.on()
+      expect(event.get("lamp")).to eq("true")
+    end
+  end
 
 =begin
       context "when using remote_host_target_field" do
@@ -574,6 +573,6 @@ describe LogStash::Codecs::Lamp do
           end
         end
       end
+    end
 =end
-  end
 end
