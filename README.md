@@ -1,2 +1,2 @@
-# logstash-codec-lamp
+# logstash-codecs-lamp
 Sample Logstash Plugin for Learning
