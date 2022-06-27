@@ -2,7 +2,7 @@ HTTP_INPUT_VERSION = File.read(File.expand_path(File.join(File.dirname(__FILE__)
 
 Gem::Specification.new do |s|
   s.name = 'logstash-codecs-lamp'
-  s.version         = 1.0.0
+  s.version = '1.0.0'
   s.licenses = ['Apache License (2.0)']
   s.summary = "Receives events over HTTP or HTTPS"
   s.description     = "This gem is a Logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/logstash-plugin install gemname. This gem is not a stand-alone program"
