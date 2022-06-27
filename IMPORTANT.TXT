@@ -1,0 +1,11 @@
+### LOGSTASH-CODECS-LAMP GEM UPDATE PROCEDURE ###
+Follow the steps below if any code changes have been made:
+1. Run the gradlew script if there are any changes to java code or the gem version is incremented, otherwise skip this step:
+#  dos2unix gradlew
+#  ./gradlew vendor
+#  ./gradlew generateGemJarRequiresFile
+2. Delete the old logstash-codecs-lamp-<version>-java.gem GEM
+#  rm -rf logstash-codecs-lamp-*-java.gem
+3. Build the new logstash-codecs-lamp-<version>-java.gem GEM:
+# gem build logstash-codecs-lamp.gemspec
+4. Commit & Push the new GEM & code changes on GIT
