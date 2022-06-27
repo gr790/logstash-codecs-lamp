@@ -1,0 +1,19 @@
+apiVersion: skaffold/v2beta11
+kind: Config
+build:
+  artifacts:
+    - image: hub.docker.com/rahulroot/logstash-codecs-lamp
+      docker:
+        dockerfile: Dockerfile.dev
+  local: {}
+profiles:
+- name: dev
+  activation:
+  - command: dev
+- name: production
+  activation:
+  - command: run
+  patches:
+  - op: replace
+    path: /build/artifacts/0/docker/dockerfile
+    value: Dockerfile
